@@ -47,13 +47,17 @@ import { EditServicePage } from './pages/launchpad/EditServicePage'
 import { AdminServiceRequestsPage } from './pages/AdminServiceRequestsPage'
 import { CoursesPage } from './pages/courses/CoursesPage'
 import { CourseDetailsPage } from './pages/courses/CourseDetailsPage'
+import { MyCoursesPage } from './pages/courses/MyCoursesPage'
 import { AdminCoursesPage } from './pages/admin/AdminCoursesPage'
 import { AdminCourseManagementPage } from './pages/admin/AdminCourseManagementPage'
+import { AdminUserManagementPage } from './pages/admin/AdminUserManagementPage'
 import NavbarDemo from './pages/NavbarDemo'
 
 import { AdminEventsPage } from './pages/admin/AdminEventsPage'
 import { AdminEventDetailsPage } from './pages/admin/AdminEventDetailsPage'
 import { EventsPage } from './pages/events/EventsPage'
+import { EventDetailPage } from './pages/events/EventDetailPage'
+import { MyEventsPage } from './pages/events/MyEventsPage'
 
 function App() {
   return (
@@ -92,6 +96,7 @@ function App() {
             {/* Courses Routes */}
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/courses/:id" element={<CourseDetailsPage />} />
+            <Route path="/my-courses" element={<MyCoursesPage />} />
             
             <Route path="/alumni/blogs/:id/edit" element={<EditBlogPage />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />
@@ -119,12 +124,15 @@ function App() {
             <Route path="/admin/allowing" element={<AdminAllowingPage />} />
             <Route path="/admin/support" element={<AdminSupportPage />} />
             <Route path="/admin/launchpad/requests" element={<AdminServiceRequestsPage />} />
+            <Route path="/admin/users" element={<AdminUserManagementPage />} />
             
             <Route path="/admin/courses" element={<AdminCoursesPage />} />
             <Route path="/admin/courses/:id" element={<AdminCourseManagementPage />} />
             
             {/* Events Routes */}
             <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/:id" element={<EventDetailPage />} />
+            <Route path="/my-events" element={<MyEventsPage />} />
             <Route path="/admin/events" element={<AdminEventsPage />} />
             <Route path="/admin/events/:id" element={<AdminEventDetailsPage />} />
             

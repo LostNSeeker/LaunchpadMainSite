@@ -27,14 +27,22 @@ export const AdminCoursesPage: React.FC = () => {
     const [formData, setFormData] = useState({
         title: '',
         description: '',
-        category: 'Technical',
+        category: 'Design',
         perks: '',
         timeline: '',
         duration: '',
         assignments: '',
         price: '',
         start_date: '',
-        image_url: ''
+        image_url: '',
+        instructor_name: '',
+        instructor_bio: '',
+        instructor_image: '',
+        what_you_learn: '',
+        requirements: '',
+        lessons: '',
+        skill_tags: '',
+        lessons_count: ''
     })
 
     useEffect(() => {
@@ -99,14 +107,22 @@ export const AdminCoursesPage: React.FC = () => {
         setFormData({
             title: '',
             description: '',
-            category: 'Technical',
+            category: 'Design',
             perks: '',
             timeline: '',
             duration: '',
             assignments: '',
             price: '',
             start_date: '',
-            image_url: ''
+            image_url: '',
+            instructor_name: '',
+            instructor_bio: '',
+            instructor_image: '',
+            what_you_learn: '',
+            requirements: '',
+            lessons: '',
+            skill_tags: '',
+            lessons_count: ''
         })
         setIsEditMode(false)
         setEditingCourseId(null)
@@ -123,7 +139,15 @@ export const AdminCoursesPage: React.FC = () => {
             assignments: course.assignments || '',
             price: course.price?.toString() || '',
             start_date: course.start_date || '',
-            image_url: course.image_url || ''
+            image_url: course.image_url || '',
+            instructor_name: course.instructor_name || '',
+            instructor_bio: course.instructor_bio || '',
+            instructor_image: course.instructor_image || '',
+            what_you_learn: course.what_you_learn || '',
+            requirements: course.requirements || '',
+            lessons: course.lessons || '',
+            skill_tags: course.skill_tags || '',
+            lessons_count: course.lessons_count?.toString() || ''
         })
         setIsEditMode(true)
         setEditingCourseId(course.id)
@@ -141,7 +165,7 @@ export const AdminCoursesPage: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 pt-24">
             <div className="flex justify-between items-center mb-8">
                 <h1 className="text-3xl font-bold">Manage Courses</h1>
                 <Button onClick={openCreateModal}>
@@ -216,10 +240,13 @@ export const AdminCoursesPage: React.FC = () => {
                                         <SelectValue placeholder="Select Category" />
                                     </SelectTrigger>
                                     <SelectContent>
-                                        <SelectItem value="Technical">Technical</SelectItem>
-                                        <SelectItem value="Business">Business</SelectItem>
                                         <SelectItem value="Design">Design</SelectItem>
+                                        <SelectItem value="IT & Software">IT & Software</SelectItem>
+                                        <SelectItem value="Photography">Photography</SelectItem>
+                                        <SelectItem value="Personal Development">Personal Development</SelectItem>
                                         <SelectItem value="Marketing">Marketing</SelectItem>
+                                        <SelectItem value="Database">Database</SelectItem>
+                                        <SelectItem value="Music">Music</SelectItem>
                                     </SelectContent>
                                 </Select>
                             </div>
@@ -239,10 +266,57 @@ export const AdminCoursesPage: React.FC = () => {
                                 <Input id="start_date" name="start_date" type="date" value={formData.start_date} onChange={handleChange} />
                             </div>
                         </div>
+                        
+                        <div className="grid grid-cols-2 gap-4">
+                             <div className="space-y-2">
+                                <Label htmlFor="lessons_count">Lessons Count</Label>
+                                <Input id="lessons_count" name="lessons_count" type="number" placeholder="e.g. 12" value={formData.lessons_count} onChange={handleChange} />
+                            </div>
+                             <div className="space-y-2">
+                                <Label htmlFor="skill_tags">Skill Tags</Label>
+                                <Input id="skill_tags" name="skill_tags" placeholder="Figma, Adobe XD, UI Design" value={formData.skill_tags} onChange={handleChange} />
+                            </div>
+                        </div>
 
                         <div className="space-y-2">
                             <Label htmlFor="image_url">Image URL</Label>
                             <Input id="image_url" name="image_url" placeholder="https://..." value={formData.image_url} onChange={handleChange} />
+                        </div>
+                        
+                        {/* Instructor Section */}
+                        <div className="border-t pt-4 mt-4">
+                            <h3 className="font-semibold mb-3 text-lg">Instructor Details</h3>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <Label htmlFor="instructor_name">Instructor Name</Label>
+                                    <Input id="instructor_name" name="instructor_name" placeholder="John Doe" value={formData.instructor_name} onChange={handleChange} />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="instructor_image">Instructor Image URL</Label>
+                                    <Input id="instructor_image" name="instructor_image" placeholder="https://..." value={formData.instructor_image} onChange={handleChange} />
+                                </div>
+                            </div>
+                            <div className="space-y-2 mt-4">
+                                <Label htmlFor="instructor_bio">Instructor Bio</Label>
+                                <Textarea id="instructor_bio" name="instructor_bio" placeholder="Short bio about the instructor..." value={formData.instructor_bio} onChange={handleChange} />
+                            </div>
+                        </div>
+                        
+                        {/* Curriculum Section */}
+                        <div className="border-t pt-4 mt-4">
+                            <h3 className="font-semibold mb-3 text-lg">Curriculum & Requirements</h3>
+                            <div className="space-y-2">
+                                <Label htmlFor="what_you_learn">What You'll Learn (one per line)</Label>
+                                <Textarea id="what_you_learn" name="what_you_learn" placeholder="Build responsive websites&#10;Master CSS animations&#10;Learn modern JavaScript" value={formData.what_you_learn} onChange={handleChange} />
+                            </div>
+                            <div className="space-y-2 mt-4">
+                                <Label htmlFor="requirements">Requirements (one per line)</Label>
+                                <Textarea id="requirements" name="requirements" placeholder="Basic HTML knowledge&#10;Computer with internet access" value={formData.requirements} onChange={handleChange} />
+                            </div>
+                            <div className="space-y-2 mt-4">
+                                <Label htmlFor="lessons">Lessons (JSON format or simple list)</Label>
+                                <Textarea id="lessons" name="lessons" placeholder="Module 1: Introduction&#10;Module 2: Getting Started" value={formData.lessons} onChange={handleChange} />
+                            </div>
                         </div>
 
                          <div className="space-y-2">

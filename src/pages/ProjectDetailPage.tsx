@@ -323,12 +323,12 @@ export const ProjectDetailPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
       {/* Hero Section with Gradient */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white">
+      <div className="bg-gradient-to-r from-purple-50 via-violet-100/50 to-blue-50 text-gray-900">
         <div className="container mx-auto px-4 py-8">
           <div className="flex items-center justify-between mb-6">
             <Button 
               variant="ghost" 
-              className="text-white hover:text-white hover:bg-white/20 rounded-full px-4 py-2" 
+              className="text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-full px-4 py-2" 
               onClick={() => navigate('/projects')}
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -341,13 +341,13 @@ export const ProjectDetailPage: React.FC = () => {
             <div className="flex items-center gap-3 mb-4">
               <Badge 
                 variant="secondary"
-                className="px-4 py-2 text-sm font-medium bg-white/20 text-white border-white/30"
+                className="px-4 py-2 text-sm font-medium bg-purple-100 text-purple-700 border-purple-200"
               >
                 {project.status}
               </Badge>
               <Badge 
                 variant="outline" 
-                className="px-4 py-2 text-sm font-medium border-white/30 text-white bg-white/10"
+                className="px-4 py-2 text-sm font-medium border-indigo-200 text-indigo-700 bg-indigo-50"
               >
                 {project.category}
               </Badge>
@@ -355,7 +355,7 @@ export const ProjectDetailPage: React.FC = () => {
                 <Button 
                   variant="secondary" 
                   size="sm" 
-                  className="ml-auto bg-white/20 hover:bg-white/30 text-white border-white/30"
+                  className="ml-auto bg-gray-100 hover:bg-gray-200 text-gray-700 border-gray-200"
                   onClick={() => navigate(`/alumni/projects/${project.id}/edit`)}
                 >
                   <Edit className="h-4 w-4 mr-2" /> Edit
@@ -367,7 +367,7 @@ export const ProjectDetailPage: React.FC = () => {
               {project.title}
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6 text-white/90 mb-6">
+            <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-6">
               <div className="flex items-center gap-2">
                 <Calendar className="h-5 w-5" />
                 <span className="text-sm">Posted {new Date(project.created_at).toLocaleDateString()}</span>
@@ -414,7 +414,7 @@ export const ProjectDetailPage: React.FC = () => {
                     View Your Applications
                   </Button>
                 )}
-                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-6 text-lg rounded-full">
+                <Button size="lg" variant="outline" className="bg-transparent border-2 border-gray-300 text-gray-700 hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-full">
                   <Heart className="h-5 w-5 mr-2" />
                   Save
                 </Button>

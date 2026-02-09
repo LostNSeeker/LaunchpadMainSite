@@ -316,7 +316,7 @@ export const AlumniConnectPage: React.FC = () => {
                                         <Button 
                                           size="sm"
                                           disabled
-                                          className="bg-yellow-50 text-yellow-600 border border-yellow-200"
+                                          className="bg-transparent text-green-600 border-2 border-green-400 shadow-[0_0_10px_rgba(34,197,94,0.4)] hover:shadow-[0_0_15px_rgba(34,197,94,0.5)]"
                                         >
                                           <Clock className="mr-2 h-4 w-4" />
                                           Pending
@@ -336,7 +336,7 @@ export const AlumniConnectPage: React.FC = () => {
                                   <Button 
                                     size="sm"
                                     asChild
-                                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                                    className="bg-transparent text-indigo-600 border-2 border-indigo-400 shadow-[0_0_10px_rgba(99,102,241,0.4)] hover:shadow-[0_0_15px_rgba(99,102,241,0.5)] hover:bg-indigo-50 transition-all"
                                   >
                                     <Link to={`/projects/${project.id}`}>
                                       Apply Now

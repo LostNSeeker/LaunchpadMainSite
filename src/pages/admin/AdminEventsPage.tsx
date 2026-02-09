@@ -31,7 +31,11 @@ export const AdminEventsPage: React.FC = () => {
         date: '',
         time: '',
         location: '',
-        image_url: ''
+        image_url: '',
+        speaker_name: '',
+        speaker_bio: '',
+        speaker_image: '',
+        speaker_contact: ''
     })
 
     const fetchEvents = async () => {
@@ -63,7 +67,11 @@ export const AdminEventsPage: React.FC = () => {
             date: '',
             time: '',
             location: '',
-            image_url: ''
+            image_url: '',
+            speaker_name: '',
+            speaker_bio: '',
+            speaker_image: '',
+            speaker_contact: ''
         })
         setIsEditMode(false)
         setEditingEventId(null)
@@ -82,7 +90,11 @@ export const AdminEventsPage: React.FC = () => {
             date: event.date,
             time: event.time,
             location: event.location,
-            image_url: event.image_url || ''
+            image_url: event.image_url || '',
+            speaker_name: event.speaker_name || '',
+            speaker_bio: event.speaker_bio || '',
+            speaker_image: event.speaker_image || '',
+            speaker_contact: event.speaker_contact || ''
         })
         setIsEditMode(true)
         setEditingEventId(event.id)
@@ -170,7 +182,7 @@ export const AdminEventsPage: React.FC = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-8 pt-24">
             <div className="flex justify-between items-center mb-8">
                 <div>
                     <h1 className="text-3xl font-bold">Manage Events</h1>
@@ -307,6 +319,28 @@ export const AdminEventsPage: React.FC = () => {
                         <div className="space-y-2">
                             <Label htmlFor="image_url">Cover Image URL (Optional)</Label>
                             <Input id="image_url" name="image_url" value={formData.image_url} onChange={handleChange} placeholder="https://..." />
+                        </div>
+
+                        <div className="border-t pt-4 mt-4">
+                            <h3 className="text-lg font-semibold mb-4">Speaker Information (Optional)</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <Label htmlFor="speaker_name">Speaker Name</Label>
+                                    <Input id="speaker_name" name="speaker_name" value={formData.speaker_name} onChange={handleChange} placeholder="John Doe" />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="speaker_contact">Speaker Contact (Email/Website)</Label>
+                                    <Input id="speaker_contact" name="speaker_contact" value={formData.speaker_contact} onChange={handleChange} placeholder="speaker@example.com" />
+                                </div>
+                            </div>
+                            <div className="space-y-2 mt-4">
+                                <Label htmlFor="speaker_image">Speaker Image URL</Label>
+                                <Input id="speaker_image" name="speaker_image" value={formData.speaker_image} onChange={handleChange} placeholder="https://..." />
+                            </div>
+                            <div className="space-y-2 mt-4">
+                                <Label htmlFor="speaker_bio">Speaker Bio</Label>
+                                <Textarea id="speaker_bio" name="speaker_bio" value={formData.speaker_bio} onChange={handleChange} rows={3} placeholder="Brief bio about the speaker..." />
+                            </div>
                         </div>
 
                         <DialogFooter>

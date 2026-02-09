@@ -39,6 +39,10 @@ export interface Event {
     time: string;
     location: string;
     image_url?: string;
+    speaker_name?: string;
+    speaker_bio?: string;
+    speaker_image?: string;
+    speaker_contact?: string;
     created_at: string;
     attendee_count?: number;
     is_enrolled?: boolean;

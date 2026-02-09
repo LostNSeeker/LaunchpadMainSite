@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Users, MessageCircle, Shield, Loader2, Briefcase, GraduationCap, Calendar } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
+import { AdminStatsSection } from '../components/admin/AdminStatsSection'
 
 export const AdminDashboard: React.FC = () => {
   const { user, isLoading } = useAuth()
@@ -23,8 +24,8 @@ export const AdminDashboard: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 pt-24">
+      <div className="container mx-auto px-4 pb-12">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <Shield className="h-10 w-10 text-blue-600" />
@@ -104,6 +105,23 @@ export const AdminDashboard: React.FC = () => {
             </CardContent>
           </Card>
 
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/users')}>
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-indigo-100 rounded-lg">
+                  <Users className="h-6 w-6 text-indigo-600" />
+                </div>
+                <CardTitle>User Management</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">
+                Manage users, block/unblock accounts for students and alumni
+              </p>
+              <Button className="w-full">Manage Users</Button>
+            </CardContent>
+          </Card>
+
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/events')}>
             <CardHeader>
               <div className="flex items-center gap-3">
@@ -120,6 +138,10 @@ export const AdminDashboard: React.FC = () => {
               <Button className="w-full">Manage Events</Button>
             </CardContent>
           </Card>
+        </div>
+
+        <div className="mt-12 max-w-6xl mx-auto">
+           <AdminStatsSection />
         </div>
       </div>
     </div>

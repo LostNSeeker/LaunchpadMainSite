@@ -357,8 +357,8 @@ export const MessagesPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-[80vh] bg-gray-100">
-      <div className="flex flex-col md:flex-row h-[80vh]">
+    <div className="min-h-screen bg-gray-100 pt-24">
+      <div className="flex flex-col md:flex-row h-[calc(100vh-6rem)]">
         {/* Left Sidebar - Conversations List */}
         <div className={`${
           selectedConversation ? 'hidden md:flex' : 'flex'

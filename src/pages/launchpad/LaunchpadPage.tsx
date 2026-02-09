@@ -46,16 +46,16 @@ export const LaunchpadPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-12">
+    <div className="min-h-screen bg-gray-50 pb-12 pt-20">
       {/* Hero / Banner Section */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-purple-900 text-white py-12 px-4">
+      <div className="bg-gradient-to-r from-blue-50 via-indigo-100/50 to-violet-50 text-gray-900 py-12 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 max-w-2xl">
               <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                 Launch your next big idea with verified services
               </h1>
-              <p className="text-lg text-blue-100">
+              <p className="text-lg text-gray-600">
                 Find trusted agencies and freelancers from our alumni network or submit your project to get matched with the perfect team.
               </p>
               
@@ -78,17 +78,17 @@ export const LaunchpadPage: React.FC = () => {
             </div>
             
             {/* Fixed Top Card "Take launchpad services" */}
-            <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 border border-white/20 shadow-2xl max-w-md w-full">
+            <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-indigo-100 shadow-xl max-w-md w-full">
               <div className="flex items-center space-x-4 mb-4">
-                <div className="p-3 bg-blue-500/20 rounded-lg">
-                  <Briefcase className="h-8 w-8 text-blue-200" />
+                <div className="p-3 bg-indigo-100 rounded-lg">
+                  <Briefcase className="h-8 w-8 text-indigo-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl">Need a custom solution?</h3>
-                  <p className="text-blue-100 text-sm">Let us handle the heavy lifting</p>
+                  <h3 className="font-bold text-xl text-gray-900">Need a custom solution?</h3>
+                  <p className="text-indigo-600 text-sm">Let us handle the heavy lifting</p>
                 </div>
               </div>
-              <p className="text-gray-200 mb-6">
+              <p className="text-gray-600 mb-6">
                 Directly connect with our admin team to describe your project. We'll match you with the best available agencies and oversee the delivery.
               </p>
               <Button asChild size="lg" className="w-full bg-white text-indigo-900 hover:bg-gray-100 border-0 font-semibold">

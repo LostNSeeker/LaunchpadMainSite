@@ -12,6 +12,16 @@ export interface Course {
   start_date?: string;
   created_at: string;
   enrollment_count?: number;
+  // Instructor fields
+  instructor_name?: string;
+  instructor_bio?: string;
+  instructor_image?: string;
+  // Curriculum fields
+  what_you_learn?: string;
+  requirements?: string;
+  lessons?: string;
+  skill_tags?: string;
+  lessons_count?: number;
 }
 
 export interface Enrollment {

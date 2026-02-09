@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom"; // Use Link from react-router-dom
+import { Link, useLocation } from "react-router-dom"; // Use Link from react-router-dom
 import { cn } from "@/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
@@ -111,6 +111,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
 
 export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const location = useLocation();
 
   return (
     <motion.div
@@ -124,13 +125,19 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
          const isExternal = item.link.startsWith("http") || item.link.startsWith("#");
          const Component = isExternal ? "a" : Link;
          const props = isExternal ? { href: item.link } : { to: item.link };
+         const isActive = location.pathname === item.link || location.pathname.startsWith(item.link + '/');
 
          return (
         // @ts-ignore
         <Component
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300 block"
+          className={cn(
+            "relative px-4 py-2 block transition-colors",
+            isActive 
+              ? "text-indigo-600 dark:text-indigo-400 font-semibold" 
+              : "text-neutral-600 dark:text-neutral-300"
+          )}
           key={`link-${idx}`}
           {...props}
         >
@@ -141,6 +148,13 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             />
           )}
           <span className="relative z-20 whitespace-nowrap">{item.name}</span>
+          {isActive && (
+            <motion.div
+              layoutId="active-indicator"
+              className="absolute -bottom-1 left-0 right-0 mx-auto h-0.5 w-4/5 bg-indigo-600 rounded-full"
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            />
+          )}
         </Component>
       )})}
     </motion.div>
