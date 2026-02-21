@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Search, Briefcase } from 'lucide-react'
+import { Search } from 'lucide-react'
 import { Input } from '../../components/ui/input'
 import { Button } from '../../components/ui/button'
 import { ServiceCard } from '../../components/launchpad/ServiceCard'
@@ -79,14 +79,9 @@ export const LaunchpadPage: React.FC = () => {
             
             {/* Fixed Top Card "Take launchpad services" */}
             <div className="bg-white/80 backdrop-blur-md rounded-xl p-6 border border-indigo-100 shadow-xl max-w-md w-full">
-              <div className="flex items-center space-x-4 mb-4">
-                <div className="p-3 bg-indigo-100 rounded-lg">
-                  <Briefcase className="h-8 w-8 text-indigo-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-xl text-gray-900">Need a custom solution?</h3>
-                  <p className="text-indigo-600 text-sm">Let us handle the heavy lifting</p>
-                </div>
+              <div className="mb-4">
+                <h3 className="font-bold text-xl text-gray-900">Need a custom solution?</h3>
+                <p className="text-indigo-600 text-sm">Let us handle the heavy lifting</p>
               </div>
               <p className="text-gray-600 mb-6">
                 Directly connect with our admin team to describe your project. We'll match you with the best available agencies and oversee the delivery.

@@ -12,6 +12,8 @@ import {
   ArrowRight,
 } from 'lucide-react'
 import { ClientFeedback } from '../components/landing/ClientFeedback'
+import { HowItWorksSection } from '../components/landing/HowItWorksSection'
+import { PlatformFeaturesSection } from '../components/landing/PlatformFeaturesSection'
 
 
 
@@ -30,7 +32,7 @@ export const LandingPage: React.FC = () => {
 
 
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center overflow-hidden py-20">
+      <section className="relative flex items-center justify-center overflow-hidden py-20 pt-36">
         {/* Stars Animation */}
         <StarsAnimation
           className="opacity-90"
@@ -77,6 +79,12 @@ export const LandingPage: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* How It Works Section */}
+      <HowItWorksSection />
+
+      {/* Platform Features Section */}
+      <PlatformFeaturesSection />
 
 
 

@@ -3,7 +3,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
 import { Button } from '../components/ui/button'
-import { Loader2, Briefcase, ArrowRight, BookOpen, UserPlus, Search, TrendingUp, Clock, CheckCircle, MessageCircle, GraduationCap, Calendar } from 'lucide-react'
+import { Loader2, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { CompletedProjectCard } from '../components/CompletedProjectCard'
 import { getApiUrl } from '../config'
@@ -160,9 +160,6 @@ export const StudentDashboard: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-700">Applied Projects</CardTitle>
-              <div className="p-2 rounded-lg bg-blue-100 group-hover:bg-blue-200 transition-colors">
-                <Briefcase className="h-4 w-4 text-blue-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">{stats.applied_projects}</div>
@@ -174,9 +171,6 @@ export const StudentDashboard: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-700">Accepted Projects</CardTitle>
-              <div className="p-2 rounded-lg bg-green-100 group-hover:bg-green-200 transition-colors">
-                <CheckCircle className="h-4 w-4 text-green-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">{stats.accepted_projects}</div>
@@ -188,9 +182,6 @@ export const StudentDashboard: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-700">Mentorship Requests</CardTitle>
-              <div className="p-2 rounded-lg bg-purple-100 group-hover:bg-purple-200 transition-colors">
-                <UserPlus className="h-4 w-4 text-purple-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">{stats.mentorship_requests}</div>
@@ -202,9 +193,6 @@ export const StudentDashboard: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-700">Pending Applications</CardTitle>
-              <div className="p-2 rounded-lg bg-orange-100 group-hover:bg-orange-200 transition-colors">
-                <Clock className="h-4 w-4 text-orange-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">{stats.pending_applications}</div>
@@ -217,39 +205,33 @@ export const StudentDashboard: React.FC = () => {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/alumni-connect">
-                <Search className="h-6 w-6 mb-2" />
                 <span className="text-sm font-semibold">Browse Projects</span>
               </Link>
             </Button>
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-green-100 to-emerald-200 hover:from-green-200 hover:to-emerald-300 text-green-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-green-100 to-emerald-200 hover:from-green-200 hover:to-emerald-300 text-green-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/find-mentors">
-                <UserPlus className="h-6 w-6 mb-2" />
                 <span className="text-sm font-semibold">Find Mentors</span>
               </Link>
             </Button>
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-200 hover:from-indigo-200 hover:to-purple-300 text-indigo-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-200 hover:from-indigo-200 hover:to-purple-300 text-indigo-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/blog">
-                <BookOpen className="h-6 w-6 mb-2" />
                 <span className="text-sm font-semibold">Read Blogs</span>
               </Link>
             </Button>
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-teal-100 to-cyan-200 hover:from-teal-200 hover:to-cyan-300 text-teal-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-teal-100 to-cyan-200 hover:from-teal-200 hover:to-cyan-300 text-teal-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/messages">
-                <MessageCircle className="h-6 w-6 mb-2" />
                 <span className="text-sm font-semibold">Messages</span>
               </Link>
             </Button>
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-purple-100 to-pink-200 hover:from-purple-200 hover:to-pink-300 text-purple-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-purple-100 to-pink-200 hover:from-purple-200 hover:to-pink-300 text-purple-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/my-courses">
-                <GraduationCap className="h-6 w-6 mb-2" />
                 <span className="text-sm font-semibold">My Courses</span>
               </Link>
             </Button>
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-orange-100 to-amber-200 hover:from-orange-200 hover:to-amber-300 text-orange-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-orange-100 to-amber-200 hover:from-orange-200 hover:to-amber-300 text-orange-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/my-events">
-                <Calendar className="h-6 w-6 mb-2" />
                 <span className="text-sm font-semibold">My Events</span>
               </Link>
             </Button>
@@ -314,7 +296,6 @@ export const StudentDashboard: React.FC = () => {
                   </div>
                 ) : appliedProjects.length === 0 && mentorshipRequests.length === 0 ? (
                   <div className="text-center py-8">
-                    <TrendingUp className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                     <p className="text-gray-500">No recent activity</p>
                     <p className="text-sm text-gray-400 mt-1">Start exploring projects and connecting with alumni!</p>
                   </div>
@@ -371,7 +352,6 @@ export const StudentDashboard: React.FC = () => {
                 </div>
               ) : appliedProjects.length === 0 ? (
                 <div className="text-center py-8">
-                  <Briefcase className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                   <p className="text-gray-500 mb-4">No applications yet</p>
                   <Button asChild className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
                     <Link to="/alumni-connect">Browse Projects</Link>
@@ -429,7 +409,6 @@ export const StudentDashboard: React.FC = () => {
                 </div>
               ) : mentorshipRequests.length === 0 ? (
                 <div className="text-center py-8">
-                  <UserPlus className="h-12 w-12 text-gray-300 mx-auto mb-4" />
                   <p className="text-gray-500 mb-4">No mentorship requests yet</p>
                   <Button asChild className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white">
                     <Link to="/alumni-connect">Find Alumni Mentors</Link>
@@ -466,8 +445,7 @@ export const StudentDashboard: React.FC = () => {
               <CardHeader>
                 <div className="flex items-center justify-between">
                   <div>
-                    <CardTitle className="text-2xl font-bold text-gray-900 flex items-center">
-                      <CheckCircle className="h-6 w-6 mr-2 text-green-600" />
+                    <CardTitle className="text-2xl font-bold text-gray-900">
                       Completed Projects
                     </CardTitle>
                     <CardDescription className="text-gray-600">

@@ -339,7 +339,7 @@ export const MessagesPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="flex items-center space-x-3">
           <Loader2 className="h-8 w-8 animate-spin text-gray-600" />
           <span className="text-lg text-gray-600">Loading messages...</span>
@@ -350,14 +350,14 @@ export const MessagesPage: React.FC = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 flex items-center justify-center">
+      <div className="min-h-screen bg-white flex items-center justify-center">
         <p className="text-muted-foreground">Please log in to access messages.</p>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-24">
+    <div className="min-h-screen bg-white pt-24">
       <div className="flex flex-col md:flex-row h-[calc(100vh-6rem)]">
         {/* Left Sidebar - Conversations List */}
         <div className={`${
@@ -649,7 +649,7 @@ export const MessagesPage: React.FC = () => {
               </div>
 
               {/* Messages Area */}
-              <div className="flex-1 overflow-y-auto p-3 md:p-4 bg-gray-50">
+              <div className="flex-1 overflow-y-auto p-3 md:p-4 bg-white">
                 {messagesLoading ? (
                   <div className="flex items-center justify-center h-full">
                     <Loader2 className="h-6 w-6 animate-spin" />
@@ -727,7 +727,7 @@ export const MessagesPage: React.FC = () => {
               </div>
             </>
           ) : (
-            <div className="flex-1 flex items-center justify-center bg-gray-50">
+            <div className="flex-1 flex items-center justify-center bg-white">
               <div className="text-center px-4">
                 <div className="w-16 h-16 md:w-24 md:h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6">
                   <MessageCircle className="h-8 w-8 md:h-12 md:w-12 text-gray-400" />

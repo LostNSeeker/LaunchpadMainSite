@@ -2,7 +2,7 @@ import React from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
-import { Users, MessageCircle, Shield, Loader2, Briefcase, GraduationCap, Calendar } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { AdminStatsSection } from '../components/admin/AdminStatsSection'
 
@@ -28,7 +28,6 @@ export const AdminDashboard: React.FC = () => {
       <div className="container mx-auto px-4 pb-12">
         <div className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <Shield className="h-10 w-10 text-blue-600" />
             <h1 className="text-5xl font-bold text-gray-800">Admin Dashboard</h1>
           </div>
           <p className="text-xl text-gray-600">
@@ -40,9 +39,6 @@ export const AdminDashboard: React.FC = () => {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/allowing')}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-blue-100 rounded-lg">
-                  <Users className="h-6 w-6 text-blue-600" />
-                </div>
                 <CardTitle>Founder Approvals</CardTitle>
               </div>
             </CardHeader>
@@ -57,9 +53,6 @@ export const AdminDashboard: React.FC = () => {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/support')}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-green-100 rounded-lg">
-                  <MessageCircle className="h-6 w-6 text-green-600" />
-                </div>
                 <CardTitle>Support Messages</CardTitle>
               </div>
             </CardHeader>
@@ -74,9 +67,6 @@ export const AdminDashboard: React.FC = () => {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/launchpad/requests')}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-purple-100 rounded-lg">
-                  <Briefcase className="h-6 w-6 text-purple-600" />
-                </div>
                 <CardTitle>Service Requests</CardTitle>
               </div>
             </CardHeader>
@@ -91,9 +81,6 @@ export const AdminDashboard: React.FC = () => {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/courses')}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-yellow-100 rounded-lg">
-                  <GraduationCap className="h-6 w-6 text-yellow-600" />
-                </div>
                 <CardTitle>Course Management</CardTitle>
               </div>
             </CardHeader>
@@ -108,9 +95,6 @@ export const AdminDashboard: React.FC = () => {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/users')}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-indigo-100 rounded-lg">
-                  <Users className="h-6 w-6 text-indigo-600" />
-                </div>
                 <CardTitle>User Management</CardTitle>
               </div>
             </CardHeader>
@@ -125,9 +109,6 @@ export const AdminDashboard: React.FC = () => {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/events')}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <div className="p-3 bg-red-100 rounded-lg">
-                  <Calendar className="h-6 w-6 text-red-600" />
-                </div>
                 <CardTitle>Manage Events</CardTitle>
               </div>
             </CardHeader>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { ArrowLeft, Calendar, Clock, MapPin, User, Mail, Globe, Loader2, Users, Phone, ExternalLink } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock, MapPin, User, Mail, Globe, Loader2, Users, ExternalLink } from 'lucide-react'
 import { Button } from '../../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card'
-import { Badge } from '../../components/ui/badge'
+
 import { Input } from '../../components/ui/input'
 import { useAuth } from '../../contexts/AuthContext'
 import { getApiUrl } from '../../config'
@@ -97,7 +97,7 @@ export const EventDetailPage: React.FC = () => {
 
     if (loading) {
         return (
-            <div className="flex justify-center items-center min-h-screen bg-[#0f0a1f]">
+            <div className="flex justify-center items-center min-h-screen bg-[#0a0f1f]">
                 <Loader2 className="h-8 w-8 animate-spin text-white" />
             </div>
         )
@@ -108,9 +108,9 @@ export const EventDetailPage: React.FC = () => {
     }
 
     return (
-        <div className="min-h-screen bg-[#0f0a1f]">
+        <div className="min-h-screen bg-[#0a0f1f]">
             {/* Hero Section - Dark */}
-            <section className="relative bg-gradient-to-br from-[#0f0a1f] via-[#1a1033] to-[#0f0a1f] pt-24 pb-32 overflow-hidden">
+            <section className="relative bg-gradient-to-br from-[#0a0f1f] via-[#0f1a33] to-[#0a0f1f] pt-24 pb-32 overflow-hidden">
                 {/* Background Image */}
                 <div className="absolute inset-0 opacity-40">
                     <img 
@@ -118,7 +118,7 @@ export const EventDetailPage: React.FC = () => {
                         alt="" 
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#0f0a1f]/80 via-[#0f0a1f]/70 to-[#0f0a1f]"></div>
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1f]/80 via-[#0a0f1f]/70 to-[#0a0f1f]"></div>
                 </div>
 
                 {/* Stars */}
@@ -139,16 +139,16 @@ export const EventDetailPage: React.FC = () => {
 
                 <div className="container mx-auto px-4 relative z-10">
                     {/* Back Button */}
-                    <Link to="/events" className="inline-flex items-center text-purple-300 hover:text-purple-200 mb-6 group">
+                    <Link to="/events" className="inline-flex items-center text-blue-300 hover:text-blue-200 mb-6 group">
                         <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
                         Back
                     </Link>
 
                     {/* Breadcrumb */}
                     <div className="text-sm text-gray-400 mb-6">
-                        <Link to="/" className="hover:text-purple-300">Home</Link>
+                        <Link to="/" className="hover:text-blue-300">Home</Link>
                         <span className="mx-2">/</span>
-                        <Link to="/events" className="hover:text-purple-300">Events</Link>
+                        <Link to="/events" className="hover:text-blue-300">Events</Link>
                     </div>
 
                     <div className="max-w-3xl">
@@ -227,7 +227,7 @@ export const EventDetailPage: React.FC = () => {
                                                             {event.speaker_contact.includes('@') ? (
                                                                 <a 
                                                                     href={`mailto:${event.speaker_contact}`}
-                                                                    className="flex items-center gap-3 text-purple-600 hover:text-purple-700"
+                                                                    className="flex items-center gap-3 text-blue-600 hover:text-blue-700"
                                                                 >
                                                                     <Mail className="h-5 w-5" />
                                                                     {event.speaker_contact}
@@ -237,7 +237,7 @@ export const EventDetailPage: React.FC = () => {
                                                                     href={event.speaker_contact.startsWith('http') ? event.speaker_contact : `https://${event.speaker_contact}`}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
-                                                                    className="flex items-center gap-3 text-purple-600 hover:text-purple-700"
+                                                                    className="flex items-center gap-3 text-blue-600 hover:text-blue-700"
                                                                 >
                                                                     <Globe className="h-5 w-5" />
                                                                     {event.speaker_contact}
@@ -257,14 +257,14 @@ export const EventDetailPage: React.FC = () => {
                         {/* Sidebar - Dark Theme */}
                         <div className="space-y-6">
                             {/* Date and Time Card - Dark */}
-                            <Card className="border-0 shadow-xl bg-gradient-to-br from-[#1a1033] to-[#0f0a1f] rounded-2xl overflow-hidden">
+                            <Card className="border-0 shadow-xl bg-gradient-to-br from-[#0f1a33] to-[#0a0f1f] rounded-2xl overflow-hidden">
                                 <CardHeader className="pb-2 border-b border-white/10">
                                     <CardTitle className="text-xl font-bold text-white">Date and Time</CardTitle>
                                 </CardHeader>
                                 <CardContent className="pt-6 space-y-5">
                                     <div className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                                            <Calendar className="h-5 w-5 text-purple-400" />
+                                        <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                            <Calendar className="h-5 w-5 text-blue-400" />
                                         </div>
                                         <div>
                                             <p className="text-white font-medium">
@@ -279,23 +279,23 @@ export const EventDetailPage: React.FC = () => {
                                     </div>
 
                                     <div className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                                            <Clock className="h-5 w-5 text-purple-400" />
+                                        <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                            <Clock className="h-5 w-5 text-blue-400" />
                                         </div>
                                         <p className="text-white font-medium">{event.time}</p>
                                     </div>
 
                                     <div className="flex items-start gap-4">
-                                        <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                                            <MapPin className="h-5 w-5 text-purple-400" />
+                                        <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                            <MapPin className="h-5 w-5 text-blue-400" />
                                         </div>
                                         <p className="text-white font-medium">{event.location}</p>
                                     </div>
 
                                     {event.speaker_name && (
                                         <div className="flex items-start gap-4">
-                                            <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center flex-shrink-0">
-                                                <User className="h-5 w-5 text-purple-400" />
+                                            <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                                <User className="h-5 w-5 text-blue-400" />
                                             </div>
                                             <p className="text-white font-medium">{event.speaker_name}</p>
                                         </div>
@@ -313,7 +313,7 @@ export const EventDetailPage: React.FC = () => {
                                             </Button>
                                         ) : (
                                             <Button 
-                                                className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-6"
+                                                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-6"
                                                 onClick={handleEnroll}
                                                 disabled={enrolling}
                                             >
@@ -327,7 +327,7 @@ export const EventDetailPage: React.FC = () => {
 
                             {/* Related Events - Dark */}
                             {relatedEvents.length > 0 && (
-                                <Card className="border-0 shadow-xl bg-gradient-to-br from-[#1a1033] to-[#0f0a1f] rounded-2xl overflow-hidden">
+                                <Card className="border-0 shadow-xl bg-gradient-to-br from-[#0f1a33] to-[#0a0f1f] rounded-2xl overflow-hidden">
                                     <CardHeader className="pb-2 border-b border-white/10">
                                         <CardTitle className="text-xl font-bold text-white">Related Events</CardTitle>
                                     </CardHeader>
@@ -346,11 +346,11 @@ export const EventDetailPage: React.FC = () => {
                                                     />
                                                 </div>
                                                 <div className="flex-1 min-w-0">
-                                                    <h4 className="font-medium text-sm line-clamp-2 text-white group-hover:text-purple-300 transition-colors">
+                                                    <h4 className="font-medium text-sm line-clamp-2 text-white group-hover:text-blue-300 transition-colors">
                                                         {relEvent.title}
                                                     </h4>
                                                     <div className="flex items-center gap-2 mt-2 text-xs text-gray-400">
-                                                        <Calendar className="h-3 w-3 text-purple-400" />
+                                                        <Calendar className="h-3 w-3 text-blue-400" />
                                                         <span>
                                                             {new Date(relEvent.date).toLocaleDateString(undefined, { 
                                                                 month: 'short', 
@@ -371,11 +371,11 @@ export const EventDetailPage: React.FC = () => {
             </section>
 
             {/* CTA Section - Dark */}
-            <section className="py-24 bg-gradient-to-br from-[#0f0a1f] via-[#1a1033] to-[#0f0a1f] mt-16 relative overflow-hidden">
+            <section className="py-24 bg-gradient-to-br from-[#0a0f1f] via-[#0f1a33] to-[#0a0f1f] mt-16 relative overflow-hidden">
                 {/* Background Pattern */}
                 <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
-                    <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500 rounded-full blur-3xl"></div>
+                    <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+                    <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500 rounded-full blur-3xl"></div>
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
@@ -386,7 +386,7 @@ export const EventDetailPage: React.FC = () => {
                             </h2>
                         </div>
                         <div>
-                            <p className="text-purple-300 mb-6">
+                            <p className="text-blue-300 mb-6">
                                 Sign up for Eventify today and start planning your next success!
                             </p>
                             <div className="flex flex-col sm:flex-row gap-4">
@@ -397,7 +397,7 @@ export const EventDetailPage: React.FC = () => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
-                                <Button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-6">
+                                <Button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-6">
                                     JOIN NOW
                                 </Button>
                             </div>

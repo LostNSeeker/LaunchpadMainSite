@@ -162,7 +162,7 @@ export const AlumniConnectPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 pt-24 pb-16">
         {/* Header Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-6 leading-tight">
@@ -195,7 +195,7 @@ export const AlumniConnectPage: React.FC = () => {
               {projects.length > 0 ? (
                 <div className="space-y-6">
                   {projects.slice(0, 4).map((project) => (
-                    <Card key={project.id} className="hover:shadow-lg transition-all duration-300 border-0 shadow-sm bg-white/80 backdrop-blur-sm">
+                    <Card key={project.id} className="hover:shadow-xl transition-all duration-300 border-0 shadow-md bg-white/80 backdrop-blur-sm">
                       <CardHeader className="pb-4">
                         <div className="flex items-start justify-between">
                           <div className="flex-1">
@@ -379,7 +379,7 @@ export const AlumniConnectPage: React.FC = () => {
               {blogs.length > 0 ? (
                 <div className="space-y-4">
                   {blogs.map((post) => (
-                    <Card key={post.id} className="hover:shadow-md transition-all duration-200 border-0 shadow-sm bg-white/80 backdrop-blur-sm">
+                    <Card key={post.id} className="hover:shadow-lg transition-all duration-200 border-0 shadow-md bg-white/80 backdrop-blur-sm">
                       <CardContent className="p-4">
                         <div className="space-y-3">
                           <div className="flex items-center gap-2">

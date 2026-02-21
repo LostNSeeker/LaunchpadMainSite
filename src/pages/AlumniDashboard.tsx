@@ -3,7 +3,7 @@ import { useAuth } from '../contexts/AuthContext'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
 import { Button } from '../components/ui/button'
-import { Users, BookOpen, Bell, Plus, FilePlus2, Briefcase, Loader2, TrendingUp, Clock, CheckCircle, AlertCircle } from 'lucide-react'
+import { Loader2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { getApiUrl } from '../config'
 
@@ -151,8 +151,7 @@ export const AlumniDashboard: React.FC = () => {
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50 flex items-center justify-center p-4">
         <Card className="max-w-md w-full">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Clock className="h-5 w-5 text-yellow-500" />
+            <CardTitle>
               Account Pending Approval
             </CardTitle>
           </CardHeader>
@@ -196,16 +195,13 @@ export const AlumniDashboard: React.FC = () => {
             <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-blue-200 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-600">Active Projects</CardTitle>
-              <div className="p-2 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 group-hover:from-blue-200 group-hover:to-blue-300 transition-all duration-300">
-                <Briefcase className="h-5 w-5 text-blue-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">
                 {loading ? <Loader2 className="h-8 w-8 animate-spin" /> : stats.active_projects}
               </div>
               <p className="text-xs text-gray-500 flex items-center">
-                <TrendingUp className="h-3 w-3 mr-1 text-green-500" />
+                <span className="w-2 h-2 rounded-full bg-green-500 mr-1.5" />
                 Currently showcasing
               </p>
             </CardContent>
@@ -216,16 +212,13 @@ export const AlumniDashboard: React.FC = () => {
             <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-100 to-green-200 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-600">Total Projects</CardTitle>
-              <div className="p-2 rounded-xl bg-gradient-to-br from-green-100 to-green-200 group-hover:from-green-200 group-hover:to-green-300 transition-all duration-300">
-                <FilePlus2 className="h-5 w-5 text-green-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">
                 {loading ? <Loader2 className="h-8 w-8 animate-spin" /> : stats.total_projects}
               </div>
               <p className="text-xs text-gray-500 flex items-center">
-                <CheckCircle className="h-3 w-3 mr-1 text-green-500" />
+                <span className="w-2 h-2 rounded-full bg-green-500 mr-1.5" />
                 All time created
               </p>
             </CardContent>
@@ -236,16 +229,13 @@ export const AlumniDashboard: React.FC = () => {
             <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-600">Mentees</CardTitle>
-              <div className="p-2 rounded-xl bg-gradient-to-br from-purple-100 to-purple-200 group-hover:from-purple-200 group-hover:to-purple-300 transition-all duration-300">
-                <Users className="h-5 w-5 text-purple-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">
                 {loading ? <Loader2 className="h-8 w-8 animate-spin" /> : stats.mentees}
               </div>
               <p className="text-xs text-gray-500 flex items-center">
-                <Users className="h-3 w-3 mr-1 text-purple-500" />
+                <span className="w-2 h-2 rounded-full bg-purple-500 mr-1.5" />
                 Active mentees
               </p>
             </CardContent>
@@ -256,16 +246,13 @@ export const AlumniDashboard: React.FC = () => {
             <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full -translate-y-10 translate-x-10 group-hover:scale-150 transition-transform duration-700"></div>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
               <CardTitle className="text-sm font-medium text-gray-600">Blog Posts</CardTitle>
-              <div className="p-2 rounded-xl bg-gradient-to-br from-orange-100 to-orange-200 group-hover:from-orange-200 group-hover:to-orange-300 transition-all duration-300">
-                <BookOpen className="h-5 w-5 text-orange-600" />
-              </div>
             </CardHeader>
             <CardContent className="relative z-10">
               <div className="text-3xl font-bold text-gray-900 mb-1">
                 {loading ? <Loader2 className="h-8 w-8 animate-spin" /> : stats.blog_posts}
               </div>
               <p className="text-xs text-gray-500 flex items-center">
-                <BookOpen className="h-3 w-3 mr-1 text-orange-500" />
+                <span className="w-2 h-2 rounded-full bg-orange-500 mr-1.5" />
                 Published articles
               </p>
             </CardContent>
@@ -276,47 +263,32 @@ export const AlumniDashboard: React.FC = () => {
         <div className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Button asChild className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild className="h-16 flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-200 hover:from-blue-200 hover:to-blue-300 text-blue-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/alumni/create-project">
-                <div className="p-3 rounded-full bg-white/20 group-hover:bg-white/30 transition-all duration-300 mb-2">
-                  <Plus className="h-6 w-6" />
-                </div>
                 <span className="text-sm font-semibold">Create Project</span>
               </Link>
             </Button>
             
-            <Button asChild variant="outline" className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-green-100 to-emerald-200 hover:from-green-200 hover:to-emerald-300 text-green-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" className="h-16 flex items-center justify-center bg-gradient-to-br from-green-100 to-emerald-200 hover:from-green-200 hover:to-emerald-300 text-green-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/alumni/create-blog">
-                <div className="p-3 rounded-full bg-green-100 group-hover:bg-green-200 transition-all duration-300 mb-2">
-                  <FilePlus2 className="h-6 w-6" />
-                </div>
                 <span className="text-sm font-semibold">Write Blog</span>
               </Link>
             </Button>
             
-            <Button asChild variant="outline" className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-200 hover:from-indigo-200 hover:to-purple-300 text-indigo-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" className="h-16 flex items-center justify-center bg-gradient-to-br from-indigo-100 to-purple-200 hover:from-indigo-200 hover:to-purple-300 text-indigo-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/alumni/mentees">
-                <div className="p-3 rounded-full bg-purple-100 group-hover:bg-purple-200 transition-all duration-300 mb-2">
-                  <Users className="h-6 w-6" />
-                </div>
                 <span className="text-sm font-semibold">View Mentees</span>
               </Link>
             </Button>
             
-            <Button asChild variant="outline" className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-yellow-100 to-orange-200 hover:from-yellow-200 hover:to-orange-300 text-yellow-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" className="h-16 flex items-center justify-center bg-gradient-to-br from-yellow-100 to-orange-200 hover:from-yellow-200 hover:to-orange-300 text-yellow-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/alumni/services">
-                <div className="p-3 rounded-full bg-yellow-100 group-hover:bg-yellow-200 transition-all duration-300 mb-2">
-                  <Briefcase className="h-6 w-6" />
-                </div>
                 <span className="text-sm font-semibold">Manage Services</span>
               </Link>
             </Button>
 
-            <Button asChild variant="outline" className="h-24 flex flex-col items-center justify-center bg-gradient-to-br from-teal-100 to-cyan-200 hover:from-teal-200 hover:to-cyan-300 text-teal-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <Button asChild variant="outline" className="h-16 flex items-center justify-center bg-gradient-to-br from-teal-100 to-cyan-200 hover:from-teal-200 hover:to-cyan-300 text-teal-700 shadow hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <Link to="/alumni/projects">
-                <div className="p-3 rounded-full bg-teal-100 group-hover:bg-cyan-200 transition-all duration-300 mb-2">
-                  <Briefcase className="h-6 w-6" />
-                </div>
                 <span className="text-sm font-semibold">My Projects</span>
               </Link>
             </Button>
@@ -330,7 +302,6 @@ export const AlumniDashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <CardTitle className="text-xl font-bold text-gray-900">Recent Activity</CardTitle>
                 <div className="flex items-center space-x-2">
-                  <Clock className="h-4 w-4 text-gray-500" />
                   <span className="text-sm text-gray-500">Last 7 days</span>
                 </div>
               </div>
@@ -351,16 +322,16 @@ export const AlumniDashboard: React.FC = () => {
                           ? activity.status === 'completed' ? 'bg-green-100 group-hover:bg-green-200' : 'bg-blue-100 group-hover:bg-blue-200'
                           : 'bg-blue-100 group-hover:bg-blue-200'
                       } transition-colors duration-200`}>
-                        {activity.type === 'mentorship' ? (
-                          <Users className="h-4 w-4 text-purple-600" />
+                      {activity.type === 'mentorship' ? (
+                          <span className="w-2 h-2 rounded-full bg-purple-500" />
                         ) : activity.type === 'project' ? (
                           activity.status === 'completed' ? (
-                            <CheckCircle className="h-4 w-4 text-green-600" />
+                            <span className="w-2 h-2 rounded-full bg-green-500" />
                           ) : (
-                            <Briefcase className="h-4 w-4 text-blue-600" />
+                            <span className="w-2 h-2 rounded-full bg-blue-500" />
                           )
                         ) : (
-                          <Briefcase className="h-4 w-4 text-blue-600" />
+                          <span className="w-2 h-2 rounded-full bg-blue-500" />
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
@@ -394,10 +365,7 @@ export const AlumniDashboard: React.FC = () => {
                 </div>
               ) : (
                 <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Bell className="h-8 w-8 text-gray-400" />
-                  </div>
-                  <p className="text-gray-500">No recent activity</p>
+                    <p className="text-gray-400 text-sm">No recent activity</p>
                 </div>
               )}
             </CardContent>
@@ -409,8 +377,7 @@ export const AlumniDashboard: React.FC = () => {
               <div className="flex items-center justify-between">
                 <CardTitle className="text-xl font-bold text-gray-900">Pending Requests</CardTitle>
                 <div className="flex items-center space-x-2">
-                  <AlertCircle className="h-4 w-4 text-orange-500" />
-                  <span className="text-sm text-gray-500">Action Required</span>
+                  <span className="text-sm text-orange-500 font-medium">Action Required</span>
                 </div>
               </div>
             </CardHeader>
@@ -419,7 +386,7 @@ export const AlumniDashboard: React.FC = () => {
                 <div className="flex items-center justify-between p-4 rounded-lg bg-orange-50 border border-orange-200">
                   <div className="flex items-center space-x-3">
                     <div className="p-2 rounded-full bg-orange-100">
-                      <Users className="h-4 w-4 text-orange-600" />
+                      <span className="w-2 h-2 rounded-full bg-orange-500" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-900">Mentorship Requests</p>
@@ -439,7 +406,7 @@ export const AlumniDashboard: React.FC = () => {
                 <div className="flex items-center justify-between p-4 rounded-lg bg-blue-50 border border-blue-200">
                   <div className="flex items-center space-x-3">
                     <div className="p-2 rounded-full bg-blue-100">
-                      <Briefcase className="h-4 w-4 text-blue-600" />
+                      <span className="w-2 h-2 rounded-full bg-blue-500" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-gray-900">Project Applications</p>

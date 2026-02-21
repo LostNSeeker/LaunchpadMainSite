@@ -58,6 +58,7 @@ import { AdminEventDetailsPage } from './pages/admin/AdminEventDetailsPage'
 import { EventsPage } from './pages/events/EventsPage'
 import { EventDetailPage } from './pages/events/EventDetailPage'
 import { MyEventsPage } from './pages/events/MyEventsPage'
+import { ScrollToTop } from './components/ScrollToTop'
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         reverseOrder={false}
       />
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<LandingPage />} />

@@ -181,7 +181,7 @@ export const BlogPostPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-gray-50">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 pt-24 pb-16">
         {/* Back Button */}
         <div className="mb-8">
           <Button 
@@ -297,7 +297,7 @@ export const BlogPostPage: React.FC = () => {
           </div>
 
           {/* Article Content */}
-          <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden">
             <div className="p-12">
               <div className="prose prose-lg max-w-none">
                 <div className="text-gray-700 leading-relaxed text-lg" dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -307,7 +307,7 @@ export const BlogPostPage: React.FC = () => {
 
           {/* Images Gallery */}
           {post.images && post.images.length > 0 && (
-            <div className="mt-10 bg-white rounded-3xl shadow-sm border border-gray-100 p-6">
+            <div className="mt-10 bg-white rounded-3xl shadow-lg border border-gray-100 p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Images</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {post.images.map((img, i) => (
@@ -319,7 +319,7 @@ export const BlogPostPage: React.FC = () => {
 
           {/* PDFs */}
           {post.pdfs && post.pdfs.length > 0 && (
-            <div className="mt-8 bg-white rounded-3xl shadow-sm border border-gray-100 p-6">
+            <div className="mt-8 bg-white rounded-3xl shadow-lg border border-gray-100 p-6">
               <h3 className="text-xl font-bold text-gray-900 mb-4">Resources</h3>
               <ul className="list-disc pl-6 space-y-2">
                 {post.pdfs.map((p, i) => (
@@ -333,7 +333,7 @@ export const BlogPostPage: React.FC = () => {
 
           {/* Author Section */}
           <div className="mt-16">
-            <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+            <div className="bg-white rounded-3xl shadow-lg border border-gray-100 p-8">
               <div 
                 className="flex items-center space-x-6 cursor-pointer hover:bg-gray-50 p-4 rounded-lg transition-colors"
                 onClick={() => {
